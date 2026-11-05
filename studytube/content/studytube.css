@@ -415,6 +415,27 @@ body.studytube-audio-first .ytp-chrome-bottom {
   background: #1557b0;
 }
 
+.recap-btn-feedback {
+  background: #1e2633;
+  color: #c2e7ff;
+  border: 1px solid #3c4043;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.recap-btn-feedback:hover {
+  background: #253348;
+  border-color: #4285f4;
+  color: #ffffff;
+}
+
 .recap-btn-dismiss {
   background: #2a2a2a;
   color: #e8eaed;

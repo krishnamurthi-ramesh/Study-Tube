@@ -682,6 +682,9 @@
           <button class="recap-btn-copy" id="recapCopyBtn">
             📋 Copy Savings Receipt
           </button>
+          <button class="recap-btn-feedback" id="recapFeedbackBtn" title="Suggest an idea or give feedback">
+            💬 Feedback
+          </button>
           <button class="recap-btn-dismiss" id="recapDismissBtn">Done</button>
         </div>
       </div>
@@ -692,6 +695,7 @@
     const closeBtn = document.getElementById('recapCloseBtn');
     const dismissBtn = document.getElementById('recapDismissBtn');
     const copyBtn = document.getElementById('recapCopyBtn');
+    const feedbackBtn = document.getElementById('recapFeedbackBtn');
 
     function closeModal() {
       modalOverlay.classList.remove('active');
@@ -699,6 +703,12 @@
 
     if (closeBtn) closeBtn.onclick = closeModal;
     if (dismissBtn) dismissBtn.onclick = closeModal;
+    if (feedbackBtn) {
+      feedbackBtn.onclick = () => {
+        const streamName = encodeURIComponent(state.videoTitle || 'YouTube Stream');
+        window.open(`https://github.com/krishnamurthi-ramesh/Study-Tube/issues/new?title=%5BUser+Feedback%5D+${streamName}&labels=feedback&body=Stream:+${streamName}%0AMode:+${state.mode}%0AFeedback+or+Feature+Idea:`, '_blank');
+      };
+    }
     modalOverlay.onclick = (e) => {
       if (e.target === modalOverlay) closeModal();
     };

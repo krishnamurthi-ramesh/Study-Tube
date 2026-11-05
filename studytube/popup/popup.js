@@ -448,4 +448,24 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 10. Community Feedback & Suggestions
+  const feedbackIdeaBtn = document.getElementById('feedbackIdeaBtn');
+  const feedbackIssueBtn = document.getElementById('feedbackIssueBtn');
+
+  if (feedbackIdeaBtn) {
+    feedbackIdeaBtn.addEventListener('click', () => {
+      chrome.tabs.create({
+        url: 'https://github.com/krishnamurthi-ramesh/Study-Tube/issues/new?title=%5BFeature+Request%5D+&labels=enhancement&body=Feature+Suggestion:%0A%0AWhy+it+helps+learners:'
+      });
+    });
+  }
+
+  if (feedbackIssueBtn) {
+    feedbackIssueBtn.addEventListener('click', () => {
+      chrome.tabs.create({
+        url: 'https://github.com/krishnamurthi-ramesh/Study-Tube/issues/new?title=%5BBug+Report%5D+&labels=bug&body=Description+of+problem:%0A%0AYouTube+Video+URL:%0ABrowser+(Chrome/Brave/Edge):'
+      });
+    });
+  }
 });
