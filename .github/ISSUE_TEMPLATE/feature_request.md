@@ -21,3 +21,4 @@ How does this improve bandwidth conservation, readability, or user control?
 
 ### 📝 Additional Context
 Add any screenshots, mockups, or lecture video links.
+
