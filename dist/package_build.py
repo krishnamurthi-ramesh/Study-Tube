@@ -156,10 +156,9 @@ def build_zip_package(version: str) -> Path:
                 if any(rel_path.match(pat) for pat in EXCLUDE_PATTERNS):
                     continue
 
-                # Exclude root docs from the store zip package to save size
-                if rel_path.name in ["README.md", "PRIVACY_POLICY.md", "CWS_STORE_LISTING.md"]:
-                    # Include if you want, but CWS only needs runtime files
-                    pass
+                # Exclude docs from store package (only runtime code is submitted)
+                if rel_path.name.endswith(".md"):
+                    continue
 
                 file_size = file_path.stat().st_size
                 total_uncompressed += file_size
