@@ -90,3 +90,4 @@ To test:
 3. Click the StudyTube toolbar icon to switch between study modes (144p, 240p, 360p) and toggle comment suppression.
 4. Note the live bandwidth saved overlay on the video player. All preferences are stored purely locally via chrome.storage.local with no external server communication.
 ```
+

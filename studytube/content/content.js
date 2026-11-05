@@ -737,7 +737,6 @@
       };
     }
   }
-  }
 
   // 11. Toast Notification
   function showToast(message) {
