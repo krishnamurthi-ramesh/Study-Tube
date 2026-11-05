@@ -38,7 +38,7 @@ Before uploading `studytube-v1.0.0.zip` to the Google Chrome Web Store Developer
 2. **Short Description** (132 chars):
    `Save 50-85% bandwidth on YouTube. Block hidden prefetch waste, lock crisp 720p/480p quality, and track verifiable stream telemetry.`
 3. **Detailed Description**: Copy exact content from:
-   [`docs/release/02_STORE_LISTING_METADATA.md`](file:///e:/The%20Hinglish%20gap%20Test/docs/release/02_STORE_LISTING_METADATA.md).
+   [`docs/release/02_STORE_LISTING_METADATA.md`](file:///E:/StudyTube/docs/release/02_STORE_LISTING_METADATA.md).
 4. **Category**: `Productivity` (Secondary: `Education & Tools`).
 5. **Language**: `English (United States)` / `English (Global)`.
 
