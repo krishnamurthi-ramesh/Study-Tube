@@ -112,5 +112,5 @@ Features planned for the upcoming v1.1.0 release:
 ---
 
 *StudyTube is engineered and maintained by the StudyTube Open Source Initiative.*  
-*Portfolio link: `https://github.com/your-username/studytube`*
+*GitHub Repository: `https://github.com/krishnamurthi-ramesh/Study-Tube`*
 
