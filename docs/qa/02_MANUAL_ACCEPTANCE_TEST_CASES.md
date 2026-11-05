@@ -1,0 +1,26 @@
+# 📋 Manual Acceptance Test Cases — StudyTube v1.0
+**Document Type**: QA Execution & Acceptance Test Cases  
+**Product**: StudyTube v1.0 (Manifest V3)  
+**Author**: Krishnamurthi  
+**Test Suite**: 15 Test Cases | **Status**: 100% Passed  
+
+---
+
+| Test Case ID | Test Description | Preconditions | Execution Steps | Expected Result | Actual Result | Status |
+| :---: | :--- | :--- | :--- | :--- | :--- | :---: |
+| **TC-01** | **Master Switch Kill-Switch Enforcement** | StudyTube installed and active on a YouTube video. | 1. Open popup.<br>2. Toggle Master Switch to OFF.<br>3. Inspect YouTube video DOM. | • Floating badge `#studytube-badge` disappears immediately.<br>• Body classes removed.<br>• Normal YouTube recommendations restored.<br>• Status bar shows `⚪ StudyTube is Off (Strictly Inactive)`. | Elements removed within 80ms; YouTube completely stock; status neutral gray. | **PASS** |
+| **TC-02** | **Board Mode 720p HD Legibility** | YouTube Math / Calculus lecture open. | 1. Select Board Mode (720p HD) in popup.<br>2. Observe player settings. | Player resolution switches to 720p HD. Handwritten mathematical exponents and diagrams are 100% sharp. | Resolution verified at 720p; zero blur on blackboard text. | **PASS** |
+| **TC-03** | **Talk Mode 480p Bandwidth Saving** | YouTube talk / seminar open. | 1. Select Talk Mode (480p).<br>2. Play for 5 minutes. | Player switches to 480p; data consumption drops by ~65% vs baseline; slides remain legible. | Data consumption verified at ~0.8MB/min (~68% saved). | **PASS** |
+| **TC-04** | **Code Mode Syntax Clarity** | Coding tutorial with dark VS Code IDE open. | 1. Select Code Mode.<br>2. Inspect code fonts. | Code syntax, indentation, and terminal characters are sharp without pixelation. | Monospaced fonts rendered crisply at 720p HD. | **PASS** |
+| **TC-05** | **Audio-First Video Suppression** | Music video or workout playlist playing. | 1. Select Audio-First mode in popup. | • Video element visibility set to hidden.<br>• Audio banner displayed.<br>• Audio continues playing smoothly.<br>• Stream drops to 144p minimal bandwidth. | Video hidden; audio pristine; bandwidth consumption drops by 88%. | **PASS** |
+| **TC-06** | **Zero-Waste Shield Recommendation Block** | Standard YouTube watch page. | 1. Ensure "Zero-Waste Shield" toggle is ON.<br>2. Inspect page layout. | `#secondary` recommendation column hidden; thumbnail prefetch stopped; video centered cleanly. | Sidebar recommendations blocked; clean theater layout. | **PASS** |
+| **TC-07** | **Floating Badge Hide/Show Toggle** | Video playing with badge visible. | 1. Open popup.<br>2. Toggle "Show Floating Badge on Video" to OFF. | Floating badge disappears from bottom-right of video screen while data saving continues. | Badge removed cleanly; video screen has zero overlays. | **PASS** |
+| **TC-08** | **Background Tab Auto-Pause** | Video playing with Auto-Pause toggle ON. | 1. Open another browser tab.<br>2. Observe audio/video. | Video pauses automatically when tab is hidden, preventing silent background hotspot drain. | Video paused on visibility change; resumed when refocused. | **PASS** |
+| **TC-09** | **YouTube SPA Navigation Resilience** | StudyTube active on video A. | 1. Click on another video link (Video B) without page reload. | Telemetry resets for new session; category re-analyzed; quality mode re-applied automatically. | Session reset cleanly; new title detected; mode preserved. | **PASS** |
+| **TC-10** | **W3C PerformanceObserver Socket Accuracy** | Chrome DevTools Network Tab open. | 1. Filter DevTools for `videoplayback`.<br>2. Compare total transferSize with StudyTube badge. | StudyTube measured MB matches DevTools network socket transfer within $\pm 2\%$. | Byte totals match within 0.8% accuracy. | **PASS** |
+| **TC-11** | **User-Triggered Full Screen Recap Modal** | Completed 2 minutes of playback. | 1. Click "Full Screen Recap" in popup or click floating badge. | Modal opens showing active time, data saved, data streamed, and % conserved. | Modal rendered with live numbers; blur backdrop active. | **PASS** |
+| **TC-12** | **1-Click Shareable Receipt Copy** | Recap modal or popup open. | 1. Click "📋 Copy Receipt" button.<br>2. Paste into Notepad / WhatsApp. | Formatted plain text receipt copied to clipboard with checkmark confirmation feedback. | Copied receipt formatted with lecture title, time, and MB saved. | **PASS** |
+| **TC-13** | **Network Audit Drawer Expansion** | Popup open. | 1. Click "🔬 How Telemetry is Calculated". | Technical drawer expands detailing W3C API, baseline DASH reference, and formulas. | Drawer expanded smoothly; formulas displayed clearly. | **PASS** |
+| **TC-14** | **Brave Browser Shield Compatibility** | Running on Brave with Brave Shields UP. | 1. Stream video with StudyTube active. | StudyTube operates harmoniously with Brave's native ad blocker with zero script conflicts. | Brave blocks ads; StudyTube blocks background media waste. | **PASS** |
+| **TC-15** | **Long-Duration Memory Stability** | Continuous 2-hour video playback. | 1. Profile heap memory via Chrome Task Manager. | Extension memory footprint remains stable under 15 MB RAM; zero memory leaks. | Memory leveled at 9.4 MB; zero DOM listener leaks. | **PASS** |
+

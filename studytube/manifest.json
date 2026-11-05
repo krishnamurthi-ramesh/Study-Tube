@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "StudyTube: Smart Data Saver for YouTube",
+  "version": "1.0.0",
+  "description": "Save 50-70% mobile data on YouTube video lectures by blocking background waste, locking sharp quality, and tracking live data.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["content/studytube.css"],
+      "js": ["content/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content/injected-quality.js"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ]
+}
+

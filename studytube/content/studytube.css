@@ -1,0 +1,431 @@
+/* StudyTube: YouTube In-Page Styles */
+
+/* 1. DATA WASTE BLOCKER STYLES */
+body.studytube-block-waste #secondary,
+body.studytube-block-waste #related,
+body.studytube-block-waste ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+
+/* Center and expand main video for distraction-free view */
+body.studytube-block-waste ytd-watch-flexy[flexy] #primary.ytd-watch-flexy {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Block Shorts shelves and teasers which preload video chunks silently */
+body.studytube-block-waste ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+body.studytube-block-waste ytd-reel-shelf-renderer,
+body.studytube-block-waste ytd-item-section-renderer:has(ytd-reel-shelf-renderer) {
+  display: none !important;
+}
+
+/* Block inline hover playback preview */
+body.studytube-block-waste #inline-preview-player,
+body.studytube-block-waste ytd-thumbnail[is-preview-active] #preview {
+  display: none !important;
+}
+
+/* Block heavy end-screen recommendation cards */
+body.studytube-block-waste .ytp-ce-element,
+body.studytube-block-waste .ytp-endscreen-content {
+  display: none !important;
+}
+
+/* 1b. COMMENTS & AVATARS BLOCKER (Universal selectors for YouTube desktop, theater & responsive view) */
+html.studytube-block-comments #comments,
+html.studytube-block-comments ytd-comments,
+html.studytube-block-comments ytd-comments-header-renderer,
+html.studytube-block-comments ytd-comment-thread-renderer,
+html.studytube-block-comments ytd-comment-view-model,
+html.studytube-block-comments ytd-comment-simplebox-renderer,
+html.studytube-block-comments #comment-teaser,
+html.studytube-block-comments ytd-item-section-renderer[section-identifier="comment-item-section"],
+html.studytube-block-comments ytd-engagement-panel-section-list-renderer[target-id*="comment"],
+html.studytube-block-comments ytd-engagement-panel-section-list-renderer:has(ytd-comment-thread-renderer),
+body.studytube-block-comments #comments,
+body.studytube-block-comments ytd-comments,
+body.studytube-block-comments #sections.ytd-comments,
+body.studytube-block-comments ytd-comments-header-renderer,
+body.studytube-block-comments ytd-comment-thread-renderer,
+body.studytube-block-comments ytd-comment-view-model,
+body.studytube-block-comments ytd-comment-simplebox-renderer,
+body.studytube-block-comments #comment-teaser,
+body.studytube-block-comments ytd-item-section-renderer[section-identifier="comment-item-section"],
+body.studytube-block-comments ytd-engagement-panel-section-list-renderer[target-id*="comment"],
+body.studytube-block-comments ytd-engagement-panel-section-list-renderer:has(ytd-comment-thread-renderer) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0px !important;
+  min-height: 0px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 2. AUDIO-FIRST MODE */
+body.studytube-audio-first #movie_player video {
+  visibility: hidden !important;
+}
+
+body.studytube-audio-first #movie_player::before {
+  content: "🎧 StudyTube: Audio-First Study Mode (Video hidden, saving ~85% data)";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(18, 18, 18, 0.94);
+  color: #8ab4f8;
+  padding: 16px 26px;
+  border-radius: 12px;
+  border: 1px solid rgba(138, 180, 248, 0.4);
+  font-family: Roboto, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 50;
+  text-align: center;
+  pointer-events: none;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* Keep player controls visible in Audio-First mode */
+body.studytube-audio-first .ytp-chrome-bottom {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 3. IN-PAGE FLOATING SAVINGS BADGE */
+#studytube-badge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999999;
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #4285f4;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 18px rgba(66, 133, 244, 0.25);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+#studytube-badge:hover {
+  background: #252525;
+  box-shadow: 0 6px 22px rgba(66, 133, 244, 0.4);
+  transform: translateY(-2px);
+}
+
+#studytube-badge .badge-icon {
+  font-size: 16px;
+}
+
+#studytube-badge .badge-stat {
+  font-weight: 600;
+  color: #34a853;
+}
+
+#studytube-badge .badge-mode {
+  background: #2a2a2a;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #8ab4f8;
+  border: 1px solid #3c4043;
+}
+
+/* 4. GLASS-BOX AI RECOMMENDATION PILL */
+#studytube-recommend-pill {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+  background: #1f1f1f;
+  border: 1px solid #4285f4;
+  border-radius: 30px;
+  padding: 8px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  animation: slideDownFade 0.3s ease;
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.pill-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #f1f3f4;
+}
+
+.pill-sparkle {
+  font-size: 16px;
+}
+
+.pill-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pill-text strong {
+  color: #8ab4f8;
+  font-weight: 600;
+}
+
+.pill-text span {
+  color: #bdc1c6;
+  font-size: 11px;
+}
+
+.pill-apply-btn {
+  background: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.pill-apply-btn:hover {
+  background: #1557b0;
+}
+
+.pill-dismiss-btn {
+  background: transparent;
+  border: none;
+  color: #9aa0a6;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.pill-dismiss-btn:hover {
+  color: #ffffff;
+}
+
+/* 5. SESSION RECAP MODAL */
+#studytube-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 99999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#studytube-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.studytube-recap-card {
+  width: 440px;
+  background: #181818;
+  border: 1px solid #3c4043;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(66, 133, 244, 0.3);
+  padding: 24px;
+  color: #f1f3f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+  position: relative;
+}
+
+#studytube-modal-overlay.active .studytube-recap-card {
+  transform: scale(1);
+}
+
+.recap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #282828;
+}
+
+.recap-title-group h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recap-title-group p {
+  font-size: 12px;
+  color: #9aa0a6;
+  margin-top: 2px;
+  max-width: 330px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recap-close-btn {
+  background: none;
+  border: none;
+  color: #9aa0a6;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.recap-close-btn:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.recap-hero-pill {
+  background: linear-gradient(135deg, rgba(52, 168, 83, 0.15) 0%, rgba(66, 133, 244, 0.15) 100%);
+  border: 1px solid rgba(52, 168, 83, 0.4);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.recap-hero-pill .saving-pct {
+  font-size: 32px;
+  font-weight: 800;
+  color: #34a853;
+  letter-spacing: -0.5px;
+}
+
+.recap-hero-pill .saving-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8ab4f8;
+  margin-top: 2px;
+}
+
+.recap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.recap-grid-item {
+  background: #202124;
+  border: 1px solid #2d2f31;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.recap-grid-item span {
+  display: block;
+  font-size: 11px;
+  color: #9aa0a6;
+  font-weight: 500;
+}
+
+.recap-grid-item strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f1f3f4;
+  margin-top: 4px;
+}
+
+.recap-grid-item.saved strong {
+  color: #34a853;
+}
+
+.recap-grid-item.used strong {
+  color: #8ab4f8;
+}
+
+.recap-insight-box {
+  background: #1e2633;
+  border: 1px solid #2a3a52;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 11.5px;
+  color: #c2e7ff;
+  line-height: 1.45;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.recap-insight-box .insight-text-block {
+  flex: 1;
+}
+
+.recap-insight-box .insight-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.recap-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.recap-btn-copy {
+  flex: 1;
+  background: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.recap-btn-copy:hover {
+  background: #1557b0;
+}
+
+.recap-btn-dismiss {
+  background: #2a2a2a;
+  color: #e8eaed;
+  border: 1px solid #3c4043;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.recap-btn-dismiss:hover {
+  background: #333333;
+}

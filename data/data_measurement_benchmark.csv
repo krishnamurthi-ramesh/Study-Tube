@@ -1,0 +1,14 @@
+Run_ID,Lecture_Type,Video_Title_Or_Topic,Mode_Tested,Target_Resolution,Waste_Shield_Active,Duration_Mins,Bytes_Transferred_Network_Tab,Megabytes_MB,MB_Saved_vs_Default,Percent_Saved_vs_Default,Notes
+R01,Math_Board,"Linear Algebra / Calculus Derivation",Default_YouTube_Auto,Auto (1080p/720p),No,10,,,,Baseline default YouTube
+R02,Math_Board,"Linear Algebra / Calculus Derivation",StudyTube_Board_Mode,720p HD,Yes,10,,,,Sharp whiteboard text + waste blocked
+R03,Math_Board,"Linear Algebra / Calculus Derivation",StudyTube_Talk_Mode,480p,Yes,10,,,,Readable diagrams + waste blocked
+R04,Math_Board,"Linear Algebra / Calculus Derivation",StudyTube_Audio_First,144p (Hidden),Yes,10,,,,Audio stream only + waste blocked
+R05,Coding_Tutorial,"Python Data Structures / Web Dev",Default_YouTube_Auto,Auto (1080p/720p),No,10,,,,Baseline default YouTube
+R06,Coding_Tutorial,"Python Data Structures / Web Dev",StudyTube_Board_Mode,720p HD,Yes,10,,,,Sharp IDE syntax + waste blocked
+R07,Coding_Tutorial,"Python Data Structures / Web Dev",StudyTube_Talk_Mode,480p,Yes,10,,,,Syntax readability check
+R08,Coding_Tutorial,"Python Data Structures / Web Dev",StudyTube_Audio_First,144p (Hidden),Yes,10,,,,Audio stream only
+R09,Concept_Slides,"Economics / Product Management Lecture",Default_YouTube_Auto,Auto (1080p/720p),No,10,,,,Baseline default YouTube
+R10,Concept_Slides,"Economics / Product Management Lecture",StudyTube_Board_Mode,720p HD,Yes,10,,,,Sharp slides + waste blocked
+R11,Concept_Slides,"Economics / Product Management Lecture",StudyTube_Talk_Mode,480p,Yes,10,,,,Ideal for concept slides
+R12,Concept_Slides,"Economics / Product Management Lecture",StudyTube_Audio_First,144p (Hidden),Yes,10,,,,Audio stream only
+
